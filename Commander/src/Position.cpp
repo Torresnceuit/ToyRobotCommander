@@ -33,11 +33,6 @@ namespace ToyRobotChallenge
 		_direction = direction;
 	}
 
-	Position::~Position()
-	{
-
-	}
-
 	Position& Position::operator=(const Position& position)
 	{
 		if(this == &position)

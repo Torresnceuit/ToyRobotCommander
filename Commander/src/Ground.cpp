@@ -30,10 +30,6 @@ namespace ToyRobotChallenge
 		return _height;
 	}
 
-	Ground::~Ground()
-	{
-	}
-
 	bool Ground::contains(const int x, const int y) const
 	{
 		return (x < 0 || x >= _width) || (y < 0 || y >= _height) ? false : true;

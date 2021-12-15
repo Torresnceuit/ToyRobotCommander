@@ -10,7 +10,7 @@ namespace ToyRobotChallenge
 	{
 		public:
 			explicit BaseCommand(Robot& robot);
-			virtual ~BaseCommand();
+			virtual ~BaseCommand() = default;
 			virtual void run() = 0;
 
 			Robot* getRobot() const;

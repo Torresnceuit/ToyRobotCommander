@@ -19,7 +19,6 @@ namespace ToyRobotChallenge
 	{
 		public:
 			explicit Commander(const Robot& robot, const Ground& ground);
-			Commander();
 			~Commander() = default;
 
 			bool run(const std::string& consoleCommands) const;

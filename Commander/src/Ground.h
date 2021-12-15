@@ -9,7 +9,7 @@ namespace ToyRobotChallenge
 			Ground();
 			Ground(const Ground& ground);
 			Ground(int width, int height);
-			~Ground();
+			~Ground() = default;
 
 			bool contains(const int x, const int y) const;
 			bool contains(const Position& position) const;

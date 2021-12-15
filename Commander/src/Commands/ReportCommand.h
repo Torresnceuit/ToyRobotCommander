@@ -7,7 +7,7 @@ namespace ToyRobotChallenge
 	{
 		public:
 			explicit ReportCommand(Robot& robot);
-			virtual ~ReportCommand();
+			virtual ~ReportCommand() = default;
 			virtual void run() override;
 	};
 }

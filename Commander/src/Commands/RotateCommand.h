@@ -8,7 +8,7 @@ namespace ToyRobotChallenge
 	{
 		public:
 			explicit RotateCommand(Robot& robot, const std::string& rotationString);
-			virtual ~RotateCommand();
+			virtual ~RotateCommand() = default;
 			virtual void run() override;
 
 		private:

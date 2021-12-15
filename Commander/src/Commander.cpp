@@ -20,10 +20,6 @@ namespace ToyRobotChallenge
 		_ground.reset(new Ground(ground));
 	}
 
-	Commander::Commander()
-	{
-	}
-
 	Robot* Commander::getRobot() const
 	{
 		return _robot.get();

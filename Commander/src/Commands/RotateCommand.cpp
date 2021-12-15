@@ -10,10 +10,6 @@ namespace ToyRobotChallenge
 		run();
 	}
 
-	RotateCommand::~RotateCommand()
-	{
-	}
-
 	void RotateCommand::run()
 	{		
 		getRobot()->getPosition()->rotate(_rotation);

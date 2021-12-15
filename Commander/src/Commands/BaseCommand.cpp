@@ -8,10 +8,6 @@ namespace ToyRobotChallenge
 	{
 	}
 
-	BaseCommand::~BaseCommand()
-	{
-	}
-
 	Robot* BaseCommand::getRobot() const
 	{
 		return &_robot;

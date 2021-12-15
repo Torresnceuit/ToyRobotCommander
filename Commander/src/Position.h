@@ -27,7 +27,7 @@ namespace ToyRobotChallenge
 			Position(const Position& position);
 			Position(const int& x, const int& y, const std::string& direction);
 			Position(const int& x, const int& y, const Direction& direction);
-			~Position();
+			~Position() = default;
 
 			Position& operator=(const Position& position);
 
