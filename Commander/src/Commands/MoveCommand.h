@@ -1,5 +1,6 @@
 #pragma once
 #include "BaseCommand.h"
+
 namespace ToyRobotChallenge
 {
 	class Robot;
@@ -10,7 +11,7 @@ namespace ToyRobotChallenge
 			explicit MoveCommand(Robot& robot, const Ground& ground);
 			virtual ~MoveCommand();
 			virtual void run() override;
-			
+
 		private:
 			Ground* _ground;
 	};

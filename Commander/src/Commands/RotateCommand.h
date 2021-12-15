@@ -10,10 +10,10 @@ namespace ToyRobotChallenge
 			explicit RotateCommand(Robot& robot, const std::string& rotationString);
 			virtual ~RotateCommand();
 			virtual void run() override;
-			
+
 		private:
 			Rotation getRotationFromString(const std::string& rotationString) const;
-			
+
 		private:
 			Rotation _rotation;
 	};

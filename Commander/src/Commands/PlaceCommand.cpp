@@ -1,5 +1,4 @@
 #include "PlaceCommand.h"
-
 #include "Robot.h"
 #include "Ground.h"
 #include "Position.h"
@@ -13,7 +12,7 @@ namespace ToyRobotChallenge
 		_position = new Position(position);
 		run();
 	}
-	
+
 	PlaceCommand::~PlaceCommand()
 	{
 		delete _ground;
@@ -22,7 +21,7 @@ namespace ToyRobotChallenge
 
 	void PlaceCommand::run()
 	{
-		if(_ground->contains(_position->getX(), _position->getY()))
+		if(_ground->contains(*_position))
 		{
 			getRobot()->setPosition(*_position);
 		}

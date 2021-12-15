@@ -1,8 +1,8 @@
 #include "MoveCommand.h"
-
 #include "Robot.h"
 #include "Position.h"
 #include "Ground.h"
+
 namespace ToyRobotChallenge
 {
 	MoveCommand::MoveCommand(Robot& robot, const Ground& ground)
@@ -11,17 +11,17 @@ namespace ToyRobotChallenge
 		_ground = new Ground(ground);
 		run();
 	}
-	
+
 	MoveCommand::~MoveCommand()
 	{
 		delete _ground;
 	}
-	
+
 	void MoveCommand::run()
 	{
 		Position newPosition(*getRobot()->getPosition());
 		newPosition.move();
-		if(!_ground->contains(newPosition.getX(), newPosition.getY()))
+		if(!_ground->contains(newPosition))
 		{
 			std::cout << "Invalid MOVE !!!"<< newPosition << std::endl;
 			return;

@@ -1,4 +1,5 @@
 #include "Ground.h"
+#include "Position.h"
 namespace ToyRobotChallenge
 {
 	Ground::Ground()
@@ -33,8 +34,13 @@ namespace ToyRobotChallenge
 	{
 	}
 
-	bool Ground::contains(const int x, const int y)
+	bool Ground::contains(const int x, const int y) const
 	{
 		return (x < 0 || x >= _width) || (y < 0 || y >= _height) ? false : true;
+	}
+	
+	bool Ground::contains(const Position& position) const
+	{
+		return contains(position.getX(),  position.getY());
 	}
 }

@@ -10,7 +10,7 @@ class CommanderTests : public testing::Test
 public:
 	CommanderTests();
 	virtual ~CommanderTests();
-	
+
 	void SetUp() override;
 	void TearDown() override;
 protected:

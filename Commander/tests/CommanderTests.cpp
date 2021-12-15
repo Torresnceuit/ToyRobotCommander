@@ -23,7 +23,6 @@ void CommanderTests::SetUp()
 
 void CommanderTests::TearDown()
 {
-	
 }
 
 TEST_F(CommanderTests, testInValidPlaceCommand)
@@ -63,7 +62,7 @@ TEST_F(CommanderTests, testRotateCommand)
 	bool result = _commander->run(consoleCommand);
 	ASSERT_TRUE(result);
 	ASSERT_TRUE(_commander->getRobot()->isPlaced());
-	
+
 	// Rotate left
 	consoleCommand = std::string("left");
 	result = _commander->run(consoleCommand);
@@ -71,7 +70,7 @@ TEST_F(CommanderTests, testRotateCommand)
 	// Expected direction is WEST
 	Direction current_direction = _commander->getRobot()->getPosition()->getDirection();
 	ASSERT_TRUE(current_direction == Direction::WEST);
-	
+
 	// Rotate right
 	consoleCommand = std::string("right");
 	result = _commander->run(consoleCommand);
@@ -79,7 +78,7 @@ TEST_F(CommanderTests, testRotateCommand)
 	// Expected direction is NORTH
 	current_direction = _commander->getRobot()->getPosition()->getDirection();
 	ASSERT_TRUE(current_direction == Direction::NORTH);
-	
+
 	// Wrong rotate command
 	consoleCommand = std::string("back");
 	result = _commander->run(consoleCommand);
@@ -103,7 +102,7 @@ TEST_F(CommanderTests, testValidMoveCommand)
 	bool result = _commander->run(consoleCommand);
 	ASSERT_TRUE(result);
 	ASSERT_TRUE(_commander->getRobot()->isPlaced());
-	
+
 	consoleCommand = std::string("move");
 	result = _commander->run(consoleCommand);
 	ASSERT_TRUE(result);
@@ -112,7 +111,7 @@ TEST_F(CommanderTests, testValidMoveCommand)
 	int y = _commander->getRobot()->getPosition()->getY();
 	ASSERT_EQ(x, 0);
 	ASSERT_EQ(y, 1);
-	
+
 	// Rotate left --> direction = WEST, move will decrease x by 1 and it will be out of ground
 	// Expect the command is not executed and cordinate is still (0, 1)
 	consoleCommand = std::string("left");
@@ -135,12 +134,12 @@ TEST_F(CommanderTests, testReportCommand)
 	bool result = _commander->run(consoleCommand);
 	// Expected cannot run because no robot placed
 	ASSERT_FALSE(result);
-	
+
 	consoleCommand = std::string("place 0,3,south");
 	result = _commander->run(consoleCommand);
 	ASSERT_TRUE(result);
 	ASSERT_TRUE(_commander->getRobot()->isPlaced());
-	
+
 	consoleCommand = std::string("report");
 	result = _commander->run(consoleCommand);
 	ASSERT_TRUE(result);

@@ -1,5 +1,4 @@
 #include "Utils.h"
-
 #include <string>
 
 namespace Utils
@@ -17,7 +16,7 @@ namespace Utils
 
 		return result;
 	}
-	
+
 	std::vector<std::string> regexSearch(const std::string& inputString, const std::regex& regexString)
 	{
 		std::smatch matches;
@@ -29,7 +28,7 @@ namespace Utils
 			result.push_back(matches[0]);
 			searchStart = matches.suffix().first;
 		}
-		
+
 		return result;
 	}
 

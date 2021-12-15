@@ -1,5 +1,4 @@
 #pragma once
-
 #include <memory>
 
 namespace ToyRobotChallenge
@@ -15,7 +14,7 @@ namespace ToyRobotChallenge
 			bool isPlaced() const;
 			void setPosition(const Position& position);
 			Position* getPosition() const;
-		
+
 		private:
 			std::unique_ptr<Position> _position;
 	};

@@ -1,5 +1,4 @@
 #include "Position.h"
-
 #include <vector>
 
 namespace ToyRobotChallenge
@@ -26,7 +25,7 @@ namespace ToyRobotChallenge
 		_y = y;
 		_direction = getDirectionFromString(directionString);
 	}
-	
+
 	Position::Position(const int& x, const int& y, const Direction& direction)
 	{
 		_x = x;
@@ -38,35 +37,35 @@ namespace ToyRobotChallenge
 	{
 
 	}
-	
+
 	Position& Position::operator=(const Position& position)
 	{
 		if(this == &position)
 		{
 			return *this;
 		}
-		
+
 		_x = position._x;
 		_y = position._y;
 		_direction = position._direction;
 		return *this;
 	}
-	
+
 	int Position::getX() const
 	{
 		return _x;
 	}
-	
+
 	int Position::getY() const
 	{
 		return _y;
 	}
-	
+
 	Direction Position::getDirection() const
 	{
 		return _direction;
 	}
-	
+
 	std::ostream& operator<<(std::ostream& output, const Position& position)
 	{ 
 		 output << position._x
@@ -77,7 +76,7 @@ namespace ToyRobotChallenge
 		        << std::endl;
 		 return output;            
 	}
-	
+
 	Direction Position::getDirectionFromString(const std::string& directionString) const
 	{
 		if(directionString == std::string("NORTH")) return Direction::NORTH;
@@ -85,7 +84,7 @@ namespace ToyRobotChallenge
 		if(directionString == std::string("SOUTH")) return Direction::SOUTH;
 		return Direction::WEST;
 	}
-	
+
 	void Position::rotate(const Rotation& rotation)
 	{
 		if(rotation == Rotation::LEFT)
@@ -95,7 +94,7 @@ namespace ToyRobotChallenge
 			_direction = static_cast<Direction>(directionValue);
 			return;
 		}
-		
+
 		if(rotation == Rotation::RIGHT)
 		{
 			auto directionValue = static_cast<int>(_direction);
@@ -103,10 +102,10 @@ namespace ToyRobotChallenge
 			_direction = static_cast<Direction>(directionValue);
 			return;
 		}
-		
+
 		std::cout << "Cannot rotate the robot" << std::endl;
 	}
-	
+
 	void Position::move()
 	{
 		switch(_direction)
@@ -127,7 +126,7 @@ namespace ToyRobotChallenge
 				std::cout << "Cannot move the robot";
 		}
 	}
-	
+
 	std::string Position::toString() const
 	{
 		return std::string(std::to_string(_x) + "," + std::to_string(_y) + "," + DIRECTION_MAP[static_cast<int>(_direction)]);

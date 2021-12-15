@@ -1,7 +1,8 @@
 #pragma once
 
 namespace ToyRobotChallenge
-{	
+{
+	class Position;
 	class Ground
 	{
 		public:
@@ -10,7 +11,8 @@ namespace ToyRobotChallenge
 			Ground(int width, int height);
 			~Ground();
 
-			bool contains(const int x, const int y);
+			bool contains(const int x, const int y) const;
+			bool contains(const Position& position) const;
 			int getWidth() const;
 			int getHeight() const;
 		
