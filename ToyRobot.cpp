@@ -16,7 +16,7 @@ int main()
 		Ground ground(GROUND_WIDTH, GROUND_HEIGHT);
 		Commander commander(robot, ground);
 		std::cout << "Waiting for commands .... Type empty to stop" << std::endl;
-		
+
 		while(true)
 		{
 				std::string inputCommands;
@@ -35,6 +35,6 @@ int main()
 		std::cout << "Cannot read the inputs" << std::endl;
 		return 1;
 	}
-	
+
 	return 0;
 }

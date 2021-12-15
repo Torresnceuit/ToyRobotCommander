@@ -9,11 +9,11 @@ namespace ToyRobotChallenge
 	{
 		run();
 	}
-	
+
 	ReportCommand::~ReportCommand()
 	{
 	}
-	
+
 	void ReportCommand::run()
 	{
 		std::cout << *(getRobot()->getPosition());
