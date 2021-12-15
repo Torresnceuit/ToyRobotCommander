@@ -76,6 +76,14 @@ Expected output
 
     3,3,NORTH
     
+ #### Example d
+
+    PLACE 0,0,NORTH RIGHT RIGHT LEFT MOVE REPORT
+
+Expected output
+
+    1,0,EAST
+    
 ## Setup Mac OSX
 
 ### Install CMake (2.8 or higher)
