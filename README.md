@@ -84,11 +84,12 @@ Expected output
 
     1,0,EAST
     
-## Setup Mac OSX
+## Setup
 
 ### Install CMake (2.8 or higher)
-```brew install cmake```
+Running ```brew install cmake``` on Mac OSX or following the ```CMake``` instruction to install for other platforms: https://cmake.org/install/.
 ### Install Google Test
+On Mac OSX, use the command ```brew install googletest``` to install. For other platforms, it can be built from a source code by following these steps:
 ```
 git clone https://github.com/google/googletest
 cd googletest
@@ -112,15 +113,16 @@ cmake ..
 make
 ```
 
-### Run Executable Commander
-In build folder, execute the application
-```./ToyRobot```
-
 ### Run CommanderTests
 ```
 cd build/Commander/tests
 ./CommanderTests
 ```
+
+### Run Executable Commander
+In build folder, execute the application
+```./ToyRobot```
+Enjoy!!!
 
 
 
