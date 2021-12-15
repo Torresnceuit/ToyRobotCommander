@@ -118,6 +118,7 @@ make
 cd build/Commander/tests
 ./CommanderTests
 ```
+![TestResult](https://github.com/Torresnceuit/ToyRobotCommander/blob/master/Commander/tests/output/TestResult.png)
 
 ### Run Executable Commander
 In build folder, execute the application
