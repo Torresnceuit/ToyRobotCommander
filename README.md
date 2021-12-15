@@ -102,4 +102,25 @@ find . -name "*.a" -exec cp -a {} /usr/local/lib \;
 ```
 DONE.
 
+## Compile Project
+```
+git clone git@github.com:Torresnceuit/ToyRobotCommander.git
+cd ToyRobotCommander
+mkdir build
+cmake ..
+make
+```
+
+### Run Executable Commander
+In build folder, execute the application
+```./ToyRobot```
+
+### Run CommanderTests
+```
+cd build/Commander/tests
+./CommanderTests
+```
+
+
+
 
