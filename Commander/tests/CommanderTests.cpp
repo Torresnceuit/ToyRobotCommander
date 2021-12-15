@@ -9,9 +9,6 @@ CommanderTests::CommanderTests()
 	_commander = nullptr;
 }
 
-CommanderTests::~CommanderTests()
-{}
-
 void CommanderTests::SetUp()
 {
 	const int HEIGHT = 5, WIDTH = 5;

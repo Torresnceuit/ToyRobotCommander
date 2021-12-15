@@ -9,7 +9,7 @@ class CommanderTests : public testing::Test
 {
 public:
 	CommanderTests();
-	virtual ~CommanderTests();
+	virtual ~CommanderTests() = default;
 
 	void SetUp() override;
 	void TearDown() override;
