@@ -34,7 +34,7 @@ namespace ToyRobotChallenge
 		return _ground.get();
 	}
 	
-	bool Commander::canExecuteRobot() const
+	bool Commander::canExecute() const
 	{
 		if(_robot && _robot->isPlaced())
 		{
@@ -101,7 +101,7 @@ namespace ToyRobotChallenge
 		
 		if(commandList.empty())
 		{
-			std::cout << "Not any commands matched !!!" << std::endl;
+			std::cout << "Commands are not allowed !!!" << std::endl;
 			return false;
 		}
 		
@@ -110,7 +110,7 @@ namespace ToyRobotChallenge
 			CommandType cmdType = getCommandType(command);
 			switch(cmdType)
 			{
-				case PLACE:
+				case CommandType::PLACE:
 				{
 					// Split the commands to get the position
 					std::vector<std::string> tokens = Utils::regexSplit(command, std::regex("\\s+|\\s*,\\s*"));
@@ -121,9 +121,9 @@ namespace ToyRobotChallenge
 					break;
 				}
 				
-				case ROTATE:
+				case CommandType::ROTATE:
 				{
-					if(canExecuteRobot())
+					if(canExecute())
 					{
 						cmd = new RotateCommand(*_robot, command);
 						ok = true;
@@ -131,9 +131,9 @@ namespace ToyRobotChallenge
 					break;
 				}
 				
-				case MOVE:
+				case CommandType::MOVE:
 				{
-					if(canExecuteRobot())
+					if(canExecute())
 					{
 						cmd = new MoveCommand(*_robot, *_ground);
 						ok = true;
@@ -141,9 +141,9 @@ namespace ToyRobotChallenge
 					break;
 				}
 				
-				case REPORT:
+				case CommandType::REPORT:
 				{
-					if(canExecuteRobot())
+					if(canExecute())
 					{
 						cmd = new ReportCommand(*_robot);
 						ok = true;

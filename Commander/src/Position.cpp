@@ -69,7 +69,12 @@ namespace ToyRobotChallenge
 	
 	std::ostream& operator<<(std::ostream& output, const Position& position)
 	{ 
-		 output << position._x << "," << position._y << "," << position.DIRECTION_MAP[position._direction] << std::endl;
+		 output << position._x
+		        << ","
+		        << position._y
+		        << ","
+		        << position.DIRECTION_MAP[static_cast<int>(position._direction)]
+		        << std::endl;
 		 return output;            
 	}
 	
@@ -125,6 +130,6 @@ namespace ToyRobotChallenge
 	
 	std::string Position::toString() const
 	{
-		return std::string(std::to_string(_x) + "," + std::to_string(_y) + "," + DIRECTION_MAP[_direction]);
+		return std::string(std::to_string(_x) + "," + std::to_string(_y) + "," + DIRECTION_MAP[static_cast<int>(_direction)]);
 	}
 }

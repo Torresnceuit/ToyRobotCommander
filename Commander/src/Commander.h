@@ -4,7 +4,7 @@
 
 namespace ToyRobotChallenge
 {
-	enum CommandType
+	enum class CommandType
 	{
 		PLACE,
 		ROTATE,
@@ -28,7 +28,7 @@ namespace ToyRobotChallenge
 			Ground* getGround() const;
 			
 		private:
-			bool canExecuteRobot() const;
+			bool canExecute() const;
 			std::vector<std::string> parse(const std::string& inputCommands) const;
 			CommandType getCommandType(const std::string& command) const;
 		

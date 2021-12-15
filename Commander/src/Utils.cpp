@@ -22,10 +22,9 @@ namespace Utils
 	{
 		std::smatch matches;
 		std::vector<std::string> result;
-		std::string data = inputString;
 
-		std::string::const_iterator searchStart(data.cbegin());
-		while(std::regex_search(searchStart, data.cend(), matches, regexString))
+		std::string::const_iterator searchStart(inputString.cbegin());
+		while(std::regex_search(searchStart, inputString.cend(), matches, regexString))
 		{
 			result.push_back(matches[0]);
 			searchStart = matches.suffix().first;

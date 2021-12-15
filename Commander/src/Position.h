@@ -6,7 +6,7 @@
 
 namespace ToyRobotChallenge
 {
-	enum Direction
+	enum class Direction
 	{
 		NORTH,
 		EAST,
@@ -14,7 +14,7 @@ namespace ToyRobotChallenge
 		WEST
 	};
 	
-	enum Rotation
+	enum class Rotation
 	{
 		LEFT,
 		RIGHT
@@ -34,9 +34,9 @@ namespace ToyRobotChallenge
 			int getX() const;
 			int getY() const;
 			Direction getDirection() const;
+			std::string toString() const;
 			void rotate(const Rotation& rotation);
 			void move();
-			std::string toString() const;
 			
 		friend std::ostream& operator<<(std::ostream& output, const Position& position);
 		
