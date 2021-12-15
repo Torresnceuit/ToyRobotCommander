@@ -103,6 +103,7 @@ find . -name "*.a" -exec cp -a {} /usr/local/lib \;
 DONE.
 
 ## Compile Project
+The application is compiled by C++17 with two parts: main ```ToyRobot``` application and ```CommanderTests``` for UnitTest.
 ```
 git clone git@github.com:Torresnceuit/ToyRobotCommander.git
 cd ToyRobotCommander
