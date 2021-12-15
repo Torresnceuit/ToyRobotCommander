@@ -76,4 +76,22 @@ Expected output
 
     3,3,NORTH
     
-## Setup
+## Setup Mac OSX
+
+### Install CMake (2.8 or higher)
+```brew install cmake```
+### Install Google Test
+```
+git clone https://github.com/google/googletest
+cd googletest
+mkdir build
+cd build
+cmake -DCMAKE_CXX_FLAGS=-std=c++17 ..
+
+cp -a ../googletest/include/* /usr/local/include
+cp -a ../googlemock/include/* /usr/local/include
+find . -name "*.a" -exec cp -a {} /usr/local/lib \;
+```
+DONE.
+
+
