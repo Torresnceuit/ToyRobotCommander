@@ -9,9 +9,10 @@ namespace Utils
 		std::sregex_token_iterator iter(inputString.begin(), inputString.end(), regexString, -1);
 		std::sregex_token_iterator end;
 
-		while (iter != end)  {
-				result.push_back(*iter);
-				++iter;
+		while (iter != end)
+		{
+			result.push_back(*iter);
+			++iter;
 		}
 
 		return result;
@@ -35,7 +36,7 @@ namespace Utils
 	void toUpper(std::string& data)
 	{
 		std::for_each(data.begin(), data.end(), [](char & c) {
-        c = std::toupper(c);
-    });
+			c = std::toupper(c);
+		});
 	}
 }
