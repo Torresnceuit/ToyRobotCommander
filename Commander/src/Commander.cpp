@@ -90,8 +90,6 @@ namespace ToyRobotChallenge
 		// Upper the whole string
 		Utils::toUpper(inputCommands);
 
-		BaseCommand* cmd = nullptr;
-		bool ok = false;
 		std::vector<std::string> commandList = parse(inputCommands);
 
 		if(commandList.empty())
@@ -99,6 +97,9 @@ namespace ToyRobotChallenge
 			std::cout << "Commands are not allowed !!!" << std::endl;
 			return false;
 		}
+
+		BaseCommand* cmd = nullptr;
+		bool ok = false;
 
 		for(auto command : commandList)
 		{
